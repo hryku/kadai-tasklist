@@ -14,6 +14,6 @@
         </ul>
     @endif
 
-    {!! link_to_route('task.create', '新規taskの作成') !!}
+    {!! link_to_route('tasks.create', '新規taskの作成') !!}
 
 @endsection
