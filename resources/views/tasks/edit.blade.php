@@ -6,17 +6,22 @@
 
 <h1>id: {{ $task->id }}のtaskを編集する</h1>
 
-    {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
+<div class="row">
+    <div class="col-sm-offset-2 col-lg-offset-3">
+            {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
+        <div class="form-group">
+            {!! Form::label('status', 'status:') !!}
+            {!! Form::text('status', null, ['class' => 'form-control']) !!}
+        </div>
         
-        {!! Form::label('status', 'status:') !!}
-        {!! Form::text('status') !!}
+        <div class="form-group">
+            {!! Form::label('content', 'task:') !!}
+            {!! Form::text('content', null, ['class' => 'form-control']) !!}
+        </div>
         
-        {!! Form::label('content', 'task:') !!}
-        {!! Form::text('content') !!}
-        
-        {!! Form::submit('更新') !!}
+        {!! Form::submit('更新', ['class' => 'btn btn-info']) !!}
 
-    {!! Form::close() !!}    
-
-
+        {!! Form::close() !!}    
+    </div>
+</div>
 @endsection

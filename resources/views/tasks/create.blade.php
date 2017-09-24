@@ -5,18 +5,23 @@
 <!--　ここにページ毎のコンテンツを書く　-->
 <h1>taskを作りますよー</h1>
 
-    {!! Form::model($task, ['route' => 'tasks.store']) !!}
+<div class="row">
+    <div class="col-sm-offset-2 col-lg-offset-3">
+        {!! Form::model($task, ['route' => 'tasks.store']) !!}
         
-        {!! Form::label('status', 'status:') !!}
-        {!! Form::text('status') !!}
+        <div class="form-group">
+            {!! Form::label('status', 'status:') !!}
+            {!! Form::text('status', null, ['class' => 'form-control']) !!}
+        </div>
         
+        <div class="form-group">
+            {!! Form::label('content', 'task:')!!}
+            {!! Form::text('content', null, ['class' => 'form-control']) !!}
+        </div>
         
-        {!! Form::label('content', 'task:')!!}
-        {!! Form::text('content') !!}
-        
-        {!! Form::submit('作成') !!}
+        {!! Form::submit('作成', ['class' => 'btn btn-info']) !!}
 
-    {!! Form::close() !!}
-
-
+        {!! Form::close() !!}
+    </div>
+</div>
 @endsection
